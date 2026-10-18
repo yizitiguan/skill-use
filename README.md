@@ -2,6 +2,7 @@
 
 [![DSH](https://img.shields.io/badge/DSH-plugin-3ecf8e)](https://github.com/topics/dsh-plugin)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![npm](https://img.shields.io/npm/v/@yizitiguan/skill-use)](https://www.npmjs.com/package/@yizitiguan/skill-use)
 
 DSH 插件。回答三个原生 UI 回答不了的问题：
 
@@ -16,33 +17,47 @@ DSH 插件。回答三个原生 UI 回答不了的问题：
 
 ## 安装
 
-要求 DSH `>= 0.1.5-rc.1`。本插件无构建步骤，纯 ESM + 浏览器端纯 JS。
+要求 DSH `>= 0.1.5-rc.1`。本插件**无构建步骤**，纯 ESM + 浏览器端纯 JS，
+克隆下来即可用。
 
-**方式一：插件管理器（推荐）**
+### 方式一：npm（最快）
 
-把仓库克隆到任意目录，然后在 DSH 里用插件管理器的 `install_bundle`
-指向该目录的绝对路径：
+```bash
+dsh plugin --profile <你的 profile> add @yizitiguan/skill-use
+```
+
+### 方式二：从 GitHub 本地链接
+
+克隆后用 `link:` 方式装进 profile：
 
 ```bash
 git clone https://github.com/yizitiguan/skill-use.git
+dsh plugin --profile <你的 profile> add link:<克隆下来的绝对路径>
 ```
+
+或者在 DSH 里用插件管理器：
 
 ```
 plugin_manager install_bundle <克隆下来的 skill-use 目录绝对路径>
 ```
 
-安装完成后刷新页面，顶部状态栏会出现 `Skill · 已用/已发现` 按钮。
-
-**方式二：写进 profile 的 `cordis.patch.yml`**
+### 方式三：手动写进 profile
 
 ```yaml
+# ~/.dsh/profiles/<profile>/cordis.patch.yml
 - insert:
     - id: skill-use
       name: '@yizitiguan/skill-use'
 ```
 
-同时确保该包已安装到 profile 的 `node_modules`（例如用
-`pnpm add link:<目录>`）。
+同时确保包已在 profile 的 `node_modules` 里（`pnpm add link:<目录>` 或从 npm 装）。
+
+安装完成后**刷新页面**，顶部状态栏会出现 `Skill · 已用/已发现` 按钮。
+
+> ⚠ 开发注意：`lib/client.js` 里 `__ModuleLoader__.load({ id })` 的 `id`
+> **必须等于 package.json 的包名**。装载器按包名分配模块 id，不一致会导致
+> factory 注册不上 —— 表现为插槽 `active: true` 但界面完全不渲染。
+> 插槽注册用的 `id: 'skill-use'` 是另一个东西（cell key），不受此约束。
 
 ---
 
