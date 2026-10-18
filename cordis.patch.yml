@@ -1,0 +1,23 @@
+# ============================================================================
+# skill-use —— DSH bundle patch
+# ============================================================================
+# Skill 与 MCP 使用审计：扫描本机全部 skill 来源，统计真实调用并标注来源，
+# 同时统计 MCP server / 工具的使用。
+# 入口在对话顶部状态栏，点击展开面板。
+#
+# 用户可在 profile 的 cordis.patch.yml 里覆盖任意一项。
+# ============================================================================
+
+- insert:
+    - id: skill-use
+      name: '@yizitiguan/skill-use'
+      config:
+        mode: floating
+        refreshMs: 2000
+        sections:
+          summary: true
+          usage: true
+          idle: true
+          sources: true
+          mcp: true
+          window: true

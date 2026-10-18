@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "title": "任务监控",
+    "description": "把当前会话的任务目标、计划、子智能体、后台进程、产出与来源聚合成一张可停靠的浮窗卡片，分区块可开关。"
+  },
+  "monitor": {
+    "title": "任务监控",
+    "updatedAt": "更新于 {time}",
+    "running": "运行中",
+    "idle": "空闲",
+    "collapse": "收起",
+    "expand": "展开",
+    "close": "关闭",
+    "pin": "固定到右侧",
+    "unpin": "取消固定",
+    "empty": "当前没有进行中的任务",
+    "loading": "读取中…",
+    "unavailable": "不可用",
+    "sections": {
+      "summary": "任务回顾",
+      "goal": "任务目标",
+      "plan": "计划",
+      "subagents": "子智能体",
+      "jobs": "后台进程",
+      "sideChats": "侧边聊天",
+      "skills": "Skill 与 MCP",
+      "artifacts": "产出",
+      "web": "网页查阅",
+      "sources": "来源",
+      "knowledge": "知识",
+      "memory": "记忆更新",
+      "presentation": "演示画面",
+      "team": "团队任务板",
+      "hitl": "等待你处理",
+      "cost": "成本与用量",
+      "environment": "环境信息"
+    },
+    "status": {
+      "running": "运行中",
+      "inactive": "已停止",
+      "pending": "待开始",
+      "in_progress": "进行中",
+      "completed": "已完成",
+      "blocked": "已阻塞",
+      "failed": "失败",
+      "killed": "已取消",
+      "stopping": "停止中"
+    },
+    "units": {
+      "files": "{count} 个文件",
+      "agents": "{count} 个子智能体",
+      "jobs": "{count} 个后台进程",
+      "tokens": "{count} tokens",
+      "turns": "{count} 轮"
+    }
+  },
+  "settings": {
+    "title": "任务监控",
+    "description": "选择任务监控的展示方式，以及需要显示的内容。修改会立即应用到所有任务。",
+    "display": "展示方式",
+    "mode": "任务监控形式",
+    "modeDesc": "以浮窗打开，固定在右侧，或收起为角落胶囊。",
+    "modeFloating": "浮窗",
+    "modePinned": "固定右侧",
+    "modePill": "胶囊",
+    "collapsedByDefault": "默认折叠",
+    "collapsedByDefaultDesc": "进入任务时是否自动收起监控卡片；收起后点击胶囊展开。",
+    "refreshMs": "刷新间隔",
+    "refreshMsDesc": "卡片向宿主拉取状态的间隔（毫秒）。",
+    "progress": "进度与上下文",
+    "activity": "执行活动",
+    "results": "结果与来源",
+    "aux": "辅助入口",
+    "extra": "DSH 补充"
+  }
+}

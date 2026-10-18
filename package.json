@@ -1,0 +1,62 @@
+{
+  "name": "@yizitiguan/skill-use",
+  "version": "0.1.0",
+  "description": "Skill 与 MCP 使用审计：扫描本机全部 skill 来源（DSH / Agent / Claude / Codex / Qoder / Trae 等 20 类），标注每个 skill 来自哪个工具，并在对话顶部状态栏实时显示当前会话 skill 与 MCP 的真实调用次数、成败与耗时",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/state.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "deepseek-harness",
+    "deepseek",
+    "cordis",
+    "skill",
+    "skills",
+    "mcp",
+    "audit",
+    "usage",
+    "plugin"
+  ],
+  "engines": {
+    "dsh": ">=0.1.5-rc.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yizitiguan/skill-use.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yizitiguan/skill-use/issues"
+  },
+  "homepage": "https://github.com/yizitiguan/skill-use#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "license": "MIT"
+}

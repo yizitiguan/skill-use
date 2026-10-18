@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "title": "Task Monitor",
+    "description": "Aggregates the current session's goal, plan, subagents, background jobs, artifacts and sources into one dockable floating card with per-section switches."
+  },
+  "monitor": {
+    "title": "Task Monitor",
+    "updatedAt": "Updated {time}",
+    "running": "Running",
+    "idle": "Idle",
+    "collapse": "Collapse",
+    "expand": "Expand",
+    "close": "Close",
+    "pin": "Pin to right",
+    "unpin": "Unpin",
+    "empty": "No task in progress",
+    "loading": "Loading…",
+    "unavailable": "Unavailable",
+    "sections": {
+      "summary": "Recap",
+      "goal": "Goal",
+      "plan": "Plan",
+      "subagents": "Subagents",
+      "jobs": "Background jobs",
+      "sideChats": "Side chats",
+      "skills": "Skills & MCP",
+      "artifacts": "Artifacts",
+      "web": "Web",
+      "sources": "Sources",
+      "knowledge": "Knowledge",
+      "memory": "Memory update",
+      "presentation": "Presentation",
+      "team": "Team board",
+      "hitl": "Waiting on you",
+      "cost": "Cost & usage",
+      "environment": "Environment"
+    },
+    "status": {
+      "running": "Running",
+      "inactive": "Stopped",
+      "pending": "Pending",
+      "in_progress": "In progress",
+      "completed": "Completed",
+      "blocked": "Blocked",
+      "failed": "Failed",
+      "killed": "Killed",
+      "stopping": "Stopping"
+    },
+    "units": {
+      "files": "{count} files",
+      "agents": "{count} subagents",
+      "jobs": "{count} jobs",
+      "tokens": "{count} tokens",
+      "turns": "{count} turns"
+    }
+  },
+  "settings": {
+    "title": "Task Monitor",
+    "description": "Choose how the task monitor displays and which sections it shows. Changes apply immediately to every task.",
+    "display": "Display",
+    "mode": "Monitor form",
+    "modeDesc": "Open as a floating card, pin to the right, or collapse into a corner pill.",
+    "modeFloating": "Floating",
+    "modePinned": "Pinned right",
+    "modePill": "Pill",
+    "collapsedByDefault": "Collapsed by default",
+    "collapsedByDefaultDesc": "Whether the card starts collapsed; expand it from the pill.",
+    "refreshMs": "Refresh interval",
+    "refreshMsDesc": "How often the card polls the host, in milliseconds.",
+    "progress": "Progress & context",
+    "activity": "Execution",
+    "results": "Results & sources",
+    "aux": "Shortcuts",
+    "extra": "DSH additions"
+  }
+}
